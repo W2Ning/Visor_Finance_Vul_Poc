@@ -28,7 +28,7 @@ Visor Finance 攻击事件的分析和复现
     在`delegatedTransferERC20`函数中, 攻击合约再次调用`RewardsHypervisor`的`deposit`函数,传入参数与第一步相同
     (这一步我在POC中省略了)
 
-4.  绕过一系列的检测后, `RewardsHypervisor`合约给攻击者的EOA地址铸造了  
+4.  绕过`require(IVisor(from).owner() == msg.sender)`的检测后, `RewardsHypervisor`合约给攻击者的EOA地址铸造了  
     `97624975481815716136709737`个`vVISR`
     
     
